@@ -21,6 +21,9 @@
             android:name=".AuthActivity"
             android:exported="false"/>
         <activity
+            android:name=".RegistrationActivity"
+            android:exported="false"/>
+        <activity
             android:name=".SplashScreen"
             android:exported="true"
             android:theme="@style/SplashTheme">

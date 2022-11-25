@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.example.oggetto.R
 
 class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,8 +11,7 @@ class AuthActivity : AppCompatActivity() {
         setContentView(R.layout.activity_auth)
     }
     fun openRegistration(view: View){
-        val intent =Intent(this, FragmentsContainers().javaClass)
+        val intent = Intent(this, RegistrationActivity().javaClass)
         startActivity(intent)
-
     }
 }
