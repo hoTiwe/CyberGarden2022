@@ -1,8 +1,14 @@
 <resources>
     <string name="app_name">oggetto</string>
+    <string name="Oggetto">Oggetto</string>
+    <string name="event">Event</string>
     <string name="email">E-mail</string>
     <string name="registration">регистрация</string>
     <string name="enter">войти</string>
     <string name="password">Пароль</string>
+    <string name="repeat_password">Повторите пароль</string>
+    <string name="enter_reg">вход</string>
+    <string name="next_step">далее</string>
+    <string name="oggetto">Oggetto</string>
 
 </resources>

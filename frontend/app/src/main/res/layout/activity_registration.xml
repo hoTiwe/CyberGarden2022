@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AuthActivity">
+    tools:context=".RegistrationActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,54 +16,32 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/line_info_reg"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="100dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
-                <ImageView
-                    android:id="@+id/imageView2"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_ellipse"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/oggetto"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/oggetto"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat"
-                    android:text="@string/Oggetto"
-                    android:textColor="@color/white"
-                    android:textSize="66sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="170dp"
-                    android:layout_marginStart="20dp"
-                    android:shadowColor="@color/black"
-                    android:shadowRadius="5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/event"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat"
-                    android:text="@string/event"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="-20dp"
-                    android:textSize="66sp"
-                    app:layout_constraintStart_toStartOf="@id/oggetto"
-                    app:layout_constraintTop_toBottomOf="@id/oggetto" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/line_email"
-                android:layout_marginTop="40dp"
+                android:id="@+id/line_email_reg"
+                android:layout_marginTop="100dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -161,7 +139,6 @@
                     android:text="@string/registration"
                     android:textColor="@color/yellow"
                     android:textSize="14sp"
-                    android:onClick="openRegistration"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

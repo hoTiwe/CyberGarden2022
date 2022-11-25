@@ -1,13 +1,17 @@
 package com.example.oggetto
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatDelegate
+import android.view.View
 
-class MainActivity : AppCompatActivity() {
+class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)
+    }
+    fun openRegistration(view: View){
+        val intent = Intent(this, RegistrationActivity().javaClass)
+        startActivity(intent)
     }
 }
