@@ -12,5 +12,7 @@
     <string name="list_info_1">Создание аккаунта</string>
     <string name="list_info_2">О себе</string>
     <string name="warning_email_1">email должен быть в зоне @oggettoweb.com</string>
+    <string name="back_step">назад</string>
+    <string name="oggetto">Oggetto</string>
 
 </resources>
