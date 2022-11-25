@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">oggetto</string>
+    <string name="Oggetto">Oggetto</string>
+    <string name="event">Event</string>
     <string name="email">E-mail</string>
     <string name="registration">регистрация</string>
     <string name="enter">войти</string>
