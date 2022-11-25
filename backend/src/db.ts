@@ -16,7 +16,7 @@ const dataSource = new DataSource({
         encrypt: false
     },
     entities: [UserModel, InfoModel, HobbieModel],
-    synchronize: true
+    synchronize: false
 })
 
 export default dataSource
