@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 class SplashScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val intent = Intent(this, MainActivity().javaClass)
+        val intent = Intent(this, AuthActivity().javaClass)
         startActivity(intent)
         finish()
     }
