@@ -13,7 +13,7 @@ const dataSource = new DataSource({
     options: {
         encrypt: false
     },
-    entities: [UserModel],
+    entities: [UserModel]
 })
 
 export default dataSource
