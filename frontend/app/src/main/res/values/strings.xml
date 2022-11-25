@@ -9,6 +9,7 @@
     <string name="repeat_password">Повторите пароль</string>
     <string name="enter_reg">вход</string>
     <string name="next_step">далее</string>
+    <string name="back_step">назад</string>
     <string name="oggetto">Oggetto</string>
 
 </resources>
