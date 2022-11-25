@@ -9,6 +9,7 @@
     <string name="repeat_password">Повторите пароль</string>
     <string name="enter_reg">вход</string>
     <string name="next_step">далее</string>
-    <string name="oggetto">Oggetto</string>
+    <string name="list_info_1">Создание аккаунта</string>
+    <string name="warning_email_1">email должен быть в зоне @oggettoweb.com</string>
 
 </resources>
