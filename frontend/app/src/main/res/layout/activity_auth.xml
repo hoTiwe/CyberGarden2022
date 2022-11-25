@@ -16,8 +16,54 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_ellipse"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/oggetto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/Oggetto"
+                    android:textColor="@color/white"
+                    android:textSize="66sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="170dp"
+                    android:layout_marginStart="20dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/event"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:text="@string/event"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="-20dp"
+                    android:textSize="66sp"
+                    app:layout_constraintStart_toStartOf="@id/oggetto"
+                    app:layout_constraintTop_toBottomOf="@id/oggetto" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/line_email"
-                android:layout_marginTop="200dp"
+                android:layout_marginTop="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
