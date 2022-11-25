@@ -1,4 +1,12 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { columns } from "mssql";
+import { 
+    Entity,
+    Column,
+    PrimaryGeneratedColumn,
+    OneToOne,
+    JoinColumn,
+ } from "typeorm";
+import InfoModel from "./info.model"
 
 @Entity()
 class UserModel {
@@ -18,6 +26,9 @@ class UserModel {
     @Column()
     password: string
 
+    @OneToOne(() => InfoModel)
+    @JoinColumn()
+    user_info: InfoModel
 }
 
 export default UserModel
