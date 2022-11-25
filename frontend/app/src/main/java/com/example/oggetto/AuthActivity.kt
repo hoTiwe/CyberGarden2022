@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.oggetto.R
 
-class MainActivity : AppCompatActivity() {
+class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auth)

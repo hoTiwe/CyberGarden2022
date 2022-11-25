@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".RegistrarionActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -50,7 +50,7 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
-                    android:id="@+id/ic_email_reg"
+                    android:id="@+id/ic_email"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
@@ -61,7 +61,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/inputEmail_reg"
+                    android:id="@+id/inputEmail"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
@@ -73,11 +73,11 @@
                     android:layout_marginStart="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/ic_email_reg"
+                    app:layout_constraintStart_toEndOf="@id/ic_email"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/line_password_reg"
+                android:id="@+id/line_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -87,7 +87,7 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
-                    android:id="@+id/ic_password_reg"
+                    android:id="@+id/ic_password"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
@@ -98,7 +98,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/input_password_reg"
+                    android:id="@+id/input_password"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
@@ -110,50 +110,12 @@
                     android:layout_marginStart="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/ic_password_reg"
+                    app:layout_constraintStart_toEndOf="@id/ic_password"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/line_repeat_password_reg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <ImageView
-                    android:id="@+id/ic_repeat_password_reg"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/stroke_round"
-                    android:src="@drawable/ic_password"
-                    android:padding="19dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <EditText
-                    android:id="@+id/input_repeat_password_reg"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/stroke_round"
-                    android:fontFamily="@font/montserrat"
-                    android:hint="@string/repeat_password"
-                    android:lines="1"
-                    android:padding="14dp"
-                    android:textColorHint="@color/black"
-                    android:layout_marginStart="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/ic_repeat_password_reg"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/line_navigation_reg"
+                android:id="@+id/line_navigation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
@@ -163,52 +125,51 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
-                    android:id="@+id/ic_enter_reg"
+                    android:id="@+id/ic_enter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_enter"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/btn_enter_reg"/>
+                    app:layout_constraintBottom_toTopOf="@id/btn_enter"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_medium"
-                    android:text="@string/enter_reg"
-                    android:textColor="@color/black"
+                    android:text="@string/registration"
+                    android:textColor="@color/yellow"
                     android:textSize="14sp"
-                    android:onClick="openRegistration"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/btn_enter_reg"
+                    android:id="@+id/btn_enter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
-                    android:text="@string/next_step"
-                    android:textColor="@color/yellow"
+                    android:text="@string/enter"
+                    android:textColor="@color/black"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@id/ic_enter_reg"
+                    app:layout_constraintStart_toStartOf="@id/ic_enter"
                     app:layout_constraintTop_toTopOf="parent" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/incorrect_data_reg"
+                android:id="@+id/incorrect_data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="40dp"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_marginStart="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
-                    android:id="@+id/imageError_reg"
+                    android:id="@+id/imageError"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_incorrect_data"
@@ -222,11 +183,10 @@
                     android:layout_marginTop="5dp"
                     android:textColor="@color/black"
                     android:textSize="14sp"
-                    app:layout_constraintTop_toBottomOf="@+id/imageError_reg"
+                    app:layout_constraintTop_toBottomOf="@+id/imageError"
                     app:layout_constraintStart_toStartOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
