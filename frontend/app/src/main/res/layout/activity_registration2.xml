@@ -75,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="90dp"
-                    android:fontFamily="@font/montserrat"
+                    android:fontFamily="@font/montserrat_medium"
                     android:text="@string/Oggetto"
                     android:textColor="@color/black"
                     android:textSize="42sp"
@@ -88,7 +88,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:fontFamily="@font/montserrat"
+                    android:fontFamily="@font/montserrat_medium"
                     android:text="@string/event"
                     android:textColor="@color/black"
                     android:textSize="42sp"
@@ -101,7 +101,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:fontFamily="@font/montserrat"
+                    android:fontFamily="@font/montserrat_medium"
                     android:text="@string/list_info_2"
                     android:textColor="@color/black"
                     android:textSize="18sp"
@@ -148,7 +148,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/ic_email"
                     app:layout_constraintTop_toTopOf="parent" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
