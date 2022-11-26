@@ -4,6 +4,6 @@ import { upload } from "../../../shared/multer"
 const router = Router()
 const userController = new UserController()
 
-router.post('/upload', upload.single('avatar'), userController.uploadPhoto)
+router.get('/', userController.getAll)
 
 export default router

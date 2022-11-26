@@ -7,13 +7,13 @@ import {
  } from "typeorm";
 
 @Entity()
-class HobbieModel {
+class ProfessionModel {
 
     @PrimaryGeneratedColumn()
     id: number
 
     @Column()
-    hobbie: string
+    profession: string
 }
 
-export default HobbieModel
+export default ProfessionModel

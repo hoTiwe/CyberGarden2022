@@ -7,7 +7,7 @@ var storage = multer.diskStorage({
     filename: function (req, file, cb) {
         let extArray = file.mimetype.split("/")
         let extension = extArray[extArray.length - 1]
-        cb(null, Date.now() + '-' + req.query.login + "." + extension)
+        cb(null,  'avatar-' + req.body.email + "." + extension)
     },
 })
 

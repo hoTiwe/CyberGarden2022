@@ -4,14 +4,20 @@ import dataSource from "../../db"
 import UserModel from "../models/user.model"
 
 class UserController {
-    private hobbies: Repository<UserModel>
+    private users: Repository<UserModel>
 
     constructor() {
-        this.hobbies = dataSource.getRepository(UserModel)
+        this.users = dataSource.getRepository(UserModel)
     }
 
-    uploadPhoto: ControllerHandler = async (req, res, next) => {
-        res.json({test: 1})
+    getAll: ControllerHandler = async (req, res, next) => {
+        res.json(await this.users.find({
+            relations: {
+                hobbies: true,
+                links: true, 
+                profession: true
+            },
+        }))
     }
 }
 
