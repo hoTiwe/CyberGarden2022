@@ -5,9 +5,10 @@ var storage = multer.diskStorage({
         cb(null, "static/")
     },
     filename: function (req, file, cb) {
-        let extArray = file.mimetype.split("/")
+        let extArray = file.originalname.split(".")
         let extension = extArray[extArray.length - 1]
-        cb(null,  'avatar-' + req.body.email + "." + extension)
+        let newName = "avatar-" + req.body.email + "." + extension
+        cb(null, newName.replace(/"/g, ""))
     },
 })
 

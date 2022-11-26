@@ -21,49 +21,60 @@ class AuthController {
     }
 
     login = async (req: Request, res: Response, next: NextFunction) => {
-        
-
-        
-
         return next(
             new ApiError(StatusCodes.INTERNAL_SERVER_ERROR, "not implemented")
         )
     }
 
     register = async (req: Request, res: Response, next: NextFunction) => {
-        const { email, password, name, profession, about, link_inst, link_tg, link_vk, hobbies  } = req.body
+        const {
+            email,
+            password,
+            name,
+            profession,
+            about,
+            link_inst,
+            link_tg,
+            link_vk,
+            hobbies,
+        } = req.body
 
-        let user = new UserModel()
-        
-        let links = new LinkModel()
-        links.inst_link = link_inst
-        links.tg_link = link_tg
-        links.vk_limk = link_vk
-        user.links = links
+        try {
+            let user = new UserModel()
 
-        user.profession = await this.professions.findOne({where: {
-            id: profession
-        }})
+            let links = new LinkModel()
+            links.inst_link = link_inst
+            links.tg_link = link_tg
+            links.vk_limk = link_vk
+            user.links = links
 
-        user.hobbies = await this.hobbies.find({
-            where: {
-                id: In(hobbies)
-            }
-        })
+            user.profession = await this.professions.findOne({
+                where: {
+                    id: profession,
+                },
+            })
 
+            user.hobbies = await this.hobbies.find({
+                where: {
+                    id: In(hobbies),
+                },
+            })
 
-        user.login = email
-        user.name = name
-        user.about = about
-        user.password = await bcrypt.hash(password, 10)
-        user.avatar = req.file.filename
-        await this.users.save(user)
+            user.login = email
+            user.name = name
+            user.about = about
+            user.password = await bcrypt.hash(password, 10)
+            user.avatar = req.file.filename
+            await this.users.save(user)
 
-        res.json({
-            token: jwt.get({
-                id: user.id
-            }),
-        })
+            res.json({
+                token: jwt.get({
+                    id: user.id,
+                }),
+            })
+        } catch (err) {
+            return next(err)
+        }
     }
 
     user = (req: Request, res: Response, next: NextFunction) => {

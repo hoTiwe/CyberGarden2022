@@ -10,6 +10,10 @@ async function bootstrap(root: Router) {
     const app = express()
     await dataSource.initialize()
 
+    app.use((req, res, next) => {
+        // console.log(req)
+        next()
+    })
     app.use(cors())
     app.use('/images', express.static('./static'))
     app.use(bodyParser.urlencoded({ extended: false }))
