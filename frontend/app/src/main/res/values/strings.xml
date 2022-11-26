@@ -9,6 +9,20 @@
     <string name="repeat_password">Повторите пароль</string>
     <string name="enter_reg">вход</string>
     <string name="next_step">далее</string>
-    <string name="oggetto">Oggetto</string>
+    <string name="list_info_1">Создание аккаунта</string>
+    <string name="list_info_2">О себе</string>
+    <string name="list_info_3">Загрузка фото\nи список интересов</string>
+    <string name="list_info_4">Соцсеточки</string>
+    <string name="link_inst">Ссылка на Instagram</string>
+    <string name="link_tel">Ссылка на Telegramm</string>
+    <string name="link_vk">Ссылка на VK</string>
+    <string name="stop">закончить</string>
 
+
+    <string name="warning_email_1">email должен быть в зоне @oggettoweb.com</string>
+    <string name="back_step">назад</string>
+    <string name="oggetto">Oggetto</string>
+    <string name="fio">ФИО</string>
+    <string name="profession">Профессия</string>
+    <string name="any_facts">Пару слов о себе</string>
 </resources>

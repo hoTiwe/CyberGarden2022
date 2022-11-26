@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AuthActivity">
+    tools:context=".RegistrationActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,35 +15,71 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/line_info_reg"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
-                    android:id="@+id/imageView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_ellipse"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:src="@drawable/ic_ellipse_reg_2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" >
+                </ImageView>
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="63dp"
+                    android:layout_height="115dp"
+                    android:layout_marginEnd="35dp"
+                    android:layout_marginBottom="40dp"
+                    android:src="@drawable/line_page"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="4"
+                    android:textColor="@color/black"
+                    android:textSize="80sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="70dp"
+                    android:layout_marginBottom="75dp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="5"
+                    android:text="2"
+                    android:textColor="@color/white"
+                    android:textSize="80sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
 
                 <TextView
                     android:id="@+id/oggetto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat"
-                    android:text="@string/Oggetto"
-                    android:textColor="@color/white"
-                    android:textSize="66sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="170dp"
                     android:layout_marginStart="20dp"
-                    android:shadowColor="@color/black"
-                    android:shadowRadius="5"
+                    android:layout_marginTop="90dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/Oggetto"
+                    android:textColor="@color/black"
+                    android:textSize="42sp"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,19 +87,33 @@
                     android:id="@+id/event"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/montserrat_medium"
                     android:text="@string/event"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
-                    android:layout_marginTop="-20dp"
-                    android:textSize="66sp"
-                    app:layout_constraintStart_toStartOf="@id/oggetto"
-                    app:layout_constraintTop_toBottomOf="@id/oggetto" />
+                    android:textSize="42sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/oggetto" />
+
+                <TextView
+                    android:id="@+id/list_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/list_info_2"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/event" />
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/line_email"
-                android:layout_marginTop="40dp"
+                android:id="@+id/line_email_reg"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -73,24 +123,25 @@
 
                 <ImageView
                     android:id="@+id/ic_email"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
-                    android:src="@drawable/ic_email"
-                    android:padding="17dp"
+                    android:src="@drawable/ic_profile"
+                    android:padding="19dp"
+                    android:paddingEnd="21dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:singleLine="true"
+                    android:windowSoftInputMode="stateHidden"
                     android:scrollHorizontally="true"
-                    android:id="@+id/inputEmail"
+                    android:id="@+id/inputName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
                     android:fontFamily="@font/montserrat"
-                    android:hint="@string/email"
+                    android:hint="@string/fio"
                     android:lines="1"
                     android:padding="14dp"
                     android:textColorHint="@color/black"
@@ -100,6 +151,7 @@
                     app:layout_constraintStart_toEndOf="@id/ic_email"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/line_password"
                 android:layout_width="match_parent"
@@ -115,21 +167,23 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
-                    android:src="@drawable/ic_password"
+                    android:src="@drawable/ic_work"
                     android:padding="19dp"
+                    android:paddingEnd="18dp"
+
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:singleLine="true"
+                    android:windowSoftInputMode="stateHidden"
                     android:scrollHorizontally="true"
-                    android:id="@+id/input_password"
+                    android:id="@+id/inputProfession"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
                     android:fontFamily="@font/montserrat"
-                    android:hint="@string/password"
+                    android:hint="@string/profession"
                     android:lines="1"
                     android:padding="14dp"
                     android:textColorHint="@color/black"
@@ -137,6 +191,55 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/ic_password"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/arrow_down_reg_2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/line_repeat_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/ic_repeat_password"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/stroke_round"
+                    android:src="@drawable/ic_edit"
+                    android:padding="19dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:windowSoftInputMode="stateHidden"
+                    android:scrollHorizontally="true"
+                    android:id="@+id/wordAboutSelf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/stroke_round"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="@string/any_facts"
+                    android:lines="1"
+                    android:padding="14dp"
+                    android:textColorHint="@color/black"
+                    android:layout_marginStart="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ic_repeat_password"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -151,32 +254,46 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
+                    android:onClick="goFragment3"
                     android:id="@+id/ic_enter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_enter"
+                    app:layout_constraintBottom_toTopOf="@id/btn_enter"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/btn_enter"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
+                <ImageView
+                    android:onClick="goBackFragment1"
+                    android:id="@+id/ic_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/montserrat_medium"
-                    android:text="@string/registration"
-                    android:textColor="@color/yellow"
-                    android:textSize="14sp"
-                    android:onClick="openRegistration"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:src="@drawable/ic_back"
+                    app:layout_constraintBottom_toTopOf="@+id/textView"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:onClick="goBackFragment1"
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/back_step"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/ic_back"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:onClick="goFragment3"
                     android:id="@+id/btn_enter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
-                    android:text="@string/enter"
-                    android:textColor="@color/black"
+                    android:text="@string/next_step"
+                    android:textColor="@color/yellow"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@id/ic_enter"
@@ -204,12 +321,15 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:windowSoftInputMode="stateHidden"
+                    android:id="@+id/textError"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3dp"
                     android:textColor="@color/black"
                     android:textSize="14sp"
+                    android:text="@string/warning_email_1"
                     app:layout_constraintTop_toBottomOf="@+id/imageError"
                     app:layout_constraintStart_toStartOf="parent" />
 
