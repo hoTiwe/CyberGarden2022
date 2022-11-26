@@ -134,7 +134,9 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/inputEmail"
+                    android:windowSoftInputMode="stateHidden"
+                    android:scrollHorizontally="true"
+                    android:id="@+id/inputName"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
@@ -174,7 +176,9 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/input_password"
+                    android:windowSoftInputMode="stateHidden"
+                    android:scrollHorizontally="true"
+                    android:id="@+id/inputProfession"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
@@ -221,7 +225,9 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/input_repeat_password"
+                    android:windowSoftInputMode="stateHidden"
+                    android:scrollHorizontally="true"
+                    android:id="@+id/wordAboutSelf"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
@@ -248,6 +254,7 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
+                    android:onClick="goFragment3"
                     android:id="@+id/ic_enter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -257,6 +264,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
+                    android:onClick="goBackFragment1"
                     android:id="@+id/ic_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -266,6 +274,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:onClick="goBackFragment1"
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -278,6 +287,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:onClick="goFragment3"
                     android:id="@+id/btn_enter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -311,6 +321,8 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:windowSoftInputMode="stateHidden"
+                    android:id="@+id/textError"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"

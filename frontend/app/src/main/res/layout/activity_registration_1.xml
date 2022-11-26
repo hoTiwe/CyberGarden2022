@@ -134,6 +134,8 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
+                    android:singleLine="true"
+                    android:scrollHorizontally="true"
                     android:id="@+id/inputEmail"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -172,6 +174,9 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
+                    android:singleLine="true"
+                    android:scrollHorizontally="true"
+                    android:inputType="textPassword"
                     android:id="@+id/input_password"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -210,6 +215,9 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
+                    android:singleLine="true"
+                    android:scrollHorizontally="true"
+                    android:inputType="textPassword"
                     android:id="@+id/input_repeat_password"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -237,6 +245,7 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
+                    android:onClick="goFragment2"
                     android:id="@+id/ic_enter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -245,6 +254,7 @@
                     app:layout_constraintBottom_toTopOf="@id/btn_enter"/>
 
                 <TextView
+                    android:onClick="goBack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_medium"
@@ -256,6 +266,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:onClick="goFragment2"
                     android:id="@+id/btn_enter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -289,6 +300,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/textError"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"

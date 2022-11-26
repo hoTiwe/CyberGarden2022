@@ -83,6 +83,8 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
+                    android:singleLine="true"
+                    android:scrollHorizontally="true"
                     android:id="@+id/inputEmail"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -120,6 +122,8 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
+                    android:singleLine="true"
+                    android:scrollHorizontally="true"
                     android:id="@+id/input_password"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
