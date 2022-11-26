@@ -14,5 +14,7 @@
     <string name="warning_email_1">email должен быть в зоне @oggettoweb.com</string>
     <string name="back_step">назад</string>
     <string name="oggetto">Oggetto</string>
-
+    <string name="fio">ФИО</string>
+    <string name="profession">Профессия</string>
+    <string name="any_facts">Пару слов о себе</string>
 </resources>

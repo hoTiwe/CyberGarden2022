@@ -26,7 +26,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_elipse_reg"
+                    android:src="@drawable/ic_ellipse_reg_2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" >
@@ -75,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="90dp"
-                    android:fontFamily="@font/montserrat_medium"
+                    android:fontFamily="@font/montserrat"
                     android:text="@string/Oggetto"
                     android:textColor="@color/black"
                     android:textSize="42sp"
@@ -88,7 +88,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:fontFamily="@font/montserrat_medium"
+                    android:fontFamily="@font/montserrat"
                     android:text="@string/event"
                     android:textColor="@color/black"
                     android:textSize="42sp"
@@ -101,7 +101,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:fontFamily="@font/montserrat_medium"
+                    android:fontFamily="@font/montserrat"
                     android:text="@string/list_info_2"
                     android:textColor="@color/black"
                     android:textSize="18sp"
@@ -123,11 +123,12 @@
 
                 <ImageView
                     android:id="@+id/ic_email"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
-                    android:src="@drawable/ic_email"
-                    android:padding="17dp"
+                    android:src="@drawable/ic_profile"
+                    android:padding="19dp"
+                    android:paddingEnd="21dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -138,7 +139,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
                     android:fontFamily="@font/montserrat"
-                    android:hint="@string/email"
+                    android:hint="@string/fio"
                     android:lines="1"
                     android:padding="14dp"
                     android:textColorHint="@color/black"
@@ -147,6 +148,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/ic_email"
                     app:layout_constraintTop_toTopOf="parent" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -164,8 +166,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
-                    android:src="@drawable/ic_password"
+                    android:src="@drawable/ic_work"
                     android:padding="19dp"
+                    android:paddingEnd="18dp"
+
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -176,7 +180,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
                     android:fontFamily="@font/montserrat"
-                    android:hint="@string/password"
+                    android:hint="@string/profession"
                     android:lines="1"
                     android:padding="14dp"
                     android:textColorHint="@color/black"
@@ -185,6 +189,15 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/ic_password"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/arrow_down_reg_2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -202,7 +215,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
-                    android:src="@drawable/ic_password"
+                    android:src="@drawable/ic_edit"
                     android:padding="19dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -214,7 +227,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
                     android:fontFamily="@font/montserrat"
-                    android:hint="@string/repeat_password"
+                    android:hint="@string/any_facts"
                     android:lines="1"
                     android:padding="14dp"
                     android:textColorHint="@color/black"
@@ -240,18 +253,29 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_enter"
+                    app:layout_constraintBottom_toTopOf="@id/btn_enter"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toTopOf="@id/btn_enter"/>
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ic_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_back"
+                    app:layout_constraintBottom_toTopOf="@+id/textView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_medium"
-                    android:text="@string/enter_reg"
+                    android:text="@string/back_step"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/ic_back"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
