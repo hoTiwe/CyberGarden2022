@@ -134,6 +134,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
+
                     android:windowSoftInputMode="stateHidden"
                     android:scrollHorizontally="true"
                     android:id="@+id/inputName"
@@ -175,24 +176,17 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <EditText
-                    android:windowSoftInputMode="stateHidden"
-                    android:scrollHorizontally="true"
-                    android:id="@+id/inputProfession"
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_height="0dp"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
-                    android:fontFamily="@font/montserrat"
-                    android:hint="@string/profession"
-                    android:lines="1"
-                    android:padding="14dp"
-                    android:textColorHint="@color/black"
-                    android:layout_marginStart="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginStart="20dp"
+                    android:paddingLeft="14dp"
                     app:layout_constraintStart_toEndOf="@id/ic_password"
-                    app:layout_constraintTop_toTopOf="parent" />
-
+                    app:layout_constraintTop_toTopOf="parent"/>
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

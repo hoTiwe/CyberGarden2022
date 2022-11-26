@@ -135,7 +135,9 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/inputLink"
+                    android:windowSoftInputMode="stateHidden"
+                    android:scrollHorizontally="true"
+                    android:id="@+id/input_inst"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
@@ -174,6 +176,8 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
+                    android:windowSoftInputMode="stateHidden"
+                    android:scrollHorizontally="true"
                     android:id="@+id/inputLinkTelegram"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -213,7 +217,9 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/inputEmail"
+                    android:windowSoftInputMode="stateHidden"
+                    android:scrollHorizontally="true"
+                    android:id="@+id/input_vk"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/stroke_round"
@@ -240,6 +246,7 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
+                    android:onClick="goBackFragment3"
                     android:id="@+id/ic_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -252,10 +259,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_enter"
+                    android:onClick="endRegistration"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toTopOf="@id/btn_enter"/>
 
                 <TextView
+                    android:onClick="goBackFragment3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_medium"
@@ -271,6 +280,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
+                    android:onClick="endRegistration"
                     android:text="@string/stop"
                     android:textColor="@color/yellow"
                     android:textSize="14sp"
@@ -279,6 +289,40 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
 
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/incorrect_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="40dp"
+                android:visibility="gone"
+                android:layout_marginStart="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_incorrect_data"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:text="@string/warning_email_1"
+                    app:layout_constraintTop_toBottomOf="@+id/imageError"
+                    app:layout_constraintStart_toStartOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
