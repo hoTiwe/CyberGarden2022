@@ -1,16 +1,20 @@
 package com.example.oggetto.adapter
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.oggetto.EventInfoActivity
+import com.example.oggetto.EventsActivity
 import com.example.oggetto.Model.Event
 import com.example.oggetto.R
+import kotlinx.coroutines.NonDisposableHandle.parent
 
-class RecyclerViewAdapter( private val events: List<Event>) :
+class RecyclerViewAdapter( private val events: List<Event>, private val context: Context) :
     RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>() {
-
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val nameEvent: TextView = itemView.findViewById(R.id.nameEvent)
         val address: TextView = itemView.findViewById(R.id.address)
@@ -32,7 +36,9 @@ class RecyclerViewAdapter( private val events: List<Event>) :
         holder.countPeople.text = events[position].subscribers.size.toString()
         holder.data.text = events[position].startDate.toString()
         holder.card.setOnClickListener(View.OnClickListener {
-            //startActivity
+            var intent = Intent(context, EventInfoActivity().javaClass)
+            intent.putExtra("id", events[position].id.toString())
+            context.startActivity(intent)
         })
     }
 

@@ -4,7 +4,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-tools:context=".RegistrationActivity">
+tools:context=".CreateEvent">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -254,6 +254,7 @@ tools:context=".RegistrationActivity">
                     android:fontFamily="@font/montserrat"
                     android:hint="Дата начала"
                     android:lines="1"
+                    android:inputType="date"
                     android:padding="14dp"
                     android:scrollHorizontally="true"
                     android:singleLine="true"
@@ -307,6 +308,7 @@ tools:context=".RegistrationActivity">
                     android:hint="Дата окончания"
                     android:lines="1"
                     android:padding="14dp"
+                    android:inputType="date"
                     android:scrollHorizontally="true"
                     android:singleLine="true"
                     android:textColorHint="@color/black"
@@ -342,7 +344,7 @@ tools:context=".RegistrationActivity">
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
                     android:fontFamily="@font/montserrat"
-                    android:text="Дата начала - обязательна"
+                    android:text="Заполните обязательные поля"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -414,7 +416,7 @@ tools:context=".RegistrationActivity">
                 app:layout_constraintStart_toStartOf="parent">
 
                 <ImageView
-                    android:onClick="goBackFragment3"
+                    android:onClick="back"
                     android:id="@+id/ic_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -423,11 +425,12 @@ tools:context=".RegistrationActivity">
                     app:layout_constraintBottom_toTopOf="@id/btn_enter"/>
 
                 <ImageView
+
                     android:id="@+id/ic_enter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_enter"
-                    android:onClick="endRegistration"
+                    android:onClick="makeEvent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toTopOf="@id/btn_enter"/>
 
@@ -435,7 +438,7 @@ tools:context=".RegistrationActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
-                    android:onClick="goBackFragment3"
+                    android:onClick="back"
                     android:text="@string/back_step"
                     android:textColor="@color/black"
                     android:textSize="14sp"
@@ -448,7 +451,7 @@ tools:context=".RegistrationActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat"
-                    android:onClick="endRegistration"
+                    android:onClick="makeEvent"
                     android:text="завершить"
                     android:textColor="@color/yellow"
                     android:textSize="14sp"
@@ -464,4 +467,25 @@ tools:context=".RegistrationActivity">
 
         </LinearLayout>
     </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationZ="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/dark_grey">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Загрузка"
+            android:textSize="22sp"
+            android:textColor="@color/white"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -117,6 +117,7 @@
 
                 <ImageButton
                     android:id="@+id/btnAddUsers"
+                    android:onClick="newEvent"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:backgroundTint="@android:color/transparent"

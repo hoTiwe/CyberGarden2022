@@ -1,8 +1,11 @@
 package com.example.oggetto
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,9 +22,9 @@ class EventsActivity  : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oggetto_events)
-        initEvents()
+        initEvents(this)
     }
-    private fun initEvents(){
+    private fun initEvents(context: Context){
         var session = Session(this)
         var token = session.getSession()
         println("Session ${token}")
@@ -38,13 +41,19 @@ class EventsActivity  : AppCompatActivity(){
                 if (eventList!=null) {
                     var rec = findViewById<RecyclerView>(R.id.recyclerItems)
                     rec.layoutManager = LinearLayoutManager(EventsActivity())
-                    rec.adapter = RecyclerViewAdapter(eventList)
+                    rec.adapter = RecyclerViewAdapter(eventList, context)
                 }
                 else{
-                    Toast.makeText(EventsActivity(), "Упс.. Что-то пошло не так", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Упс.. Что-то пошло не так", Toast.LENGTH_SHORT).show()
                 }
             }
         })
-
+    }
+    fun newEvent(view: View){
+        val intent = Intent(this, CreateEvent().javaClass)
+        startActivity(intent)
+    }
+    fun back(vie: View){
+        onBackPressed()
     }
 }
