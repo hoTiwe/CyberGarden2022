@@ -33,4 +33,7 @@
     <string name="back_w">Back-end</string>
     <string name="boss_w">Boss</string>
 
+    <string name="make_event">Создание\nмероприятия</string>
+
+
 </resources>
