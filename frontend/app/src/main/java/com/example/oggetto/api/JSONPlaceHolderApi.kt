@@ -3,6 +3,7 @@ package com.example.oggetto.api
 import com.example.oggetto.Model.Hobbie
 import com.example.oggetto.Model.Professions
 import com.example.oggetto.Model.MyToken
+import com.example.oggetto.Model.Quiz
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
@@ -29,4 +30,7 @@ interface JSONPlaceHolderApi {
         @Part("link_vk") link_vk: String,
         @Part("hobbies") hobbies: List<Int>
     ) : Call<MyToken>
+
+    @GET("quiz/first")
+    fun firstQuiz(): Call<Quiz>
 }

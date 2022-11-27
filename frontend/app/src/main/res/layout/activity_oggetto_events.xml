@@ -43,7 +43,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="-85dp"
-                    android:alpha="0.8f"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/angle" />
@@ -125,53 +124,11 @@
                     app:srcCompat="@drawable/arrow_right_create" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="10dp"
+                android:id="@+id/recyclerItems"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_marginTop="35dp">
-
-                <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="320dp"
-                    android:layout_height="120dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/strok_round_white" />
-
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    tools:layout_editor_absoluteX="74dp"
-                    tools:layout_editor_absoluteY="9dp" />
-
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    tools:layout_editor_absoluteX="71dp"
-                    tools:layout_editor_absoluteY="39dp" />
-
-                <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    tools:layout_editor_absoluteX="93dp"
-                    tools:layout_editor_absoluteY="77dp" />
-
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    tools:layout_editor_absoluteX="266dp"
-                    tools:layout_editor_absoluteY="79dp" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
+                android:layout_height="wrap_content"/>
         </LinearLayout>
 
     </ScrollView>
