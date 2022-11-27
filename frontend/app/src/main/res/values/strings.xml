@@ -14,7 +14,7 @@
     <string name="list_info_3">Загрузка фото\nи список интересов</string>
     <string name="list_info_4">Соцсеточки</string>
     <string name="link_inst">Ссылка на Instagram</string>
-    <string name="link_tel">Ссылка на Telegramm</string>
+    <string name="link_tel">Ссылка на Telegram</string>
     <string name="link_vk">Ссылка на VK</string>
     <string name="stop">закончить</string>
 
@@ -25,4 +25,12 @@
     <string name="fio">ФИО</string>
     <string name="profession">Профессия</string>
     <string name="any_facts">Пару слов о себе</string>
+    <string name="text_greet">Познакомишься\nс командой Oggetto?</string>
+    <string name="text_quest">Тут пример\nвопроса про коллегу</string>
+
+    <string name="manager_w">Manager</string>
+    <string name="front_w">Front-end</string>
+    <string name="back_w">Back-end</string>
+    <string name="boss_w">Boss</string>
+
 </resources>
