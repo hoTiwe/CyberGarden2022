@@ -18,6 +18,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.oggetto.Model.*
 import com.example.oggetto.adapter.GridAdapter
+import com.example.oggetto.databinding.ActivityQuiz1Binding
 import id.zelory.compressor.Compressor
 import id.zelory.compressor.constraint.format
 import id.zelory.compressor.constraint.quality
@@ -42,6 +43,7 @@ class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
     var pickedPhoto : Uri? = null
     var imageFile: File? = null
     var context: Context? = null
+    var professions: List<Professions> = listOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration_1)
@@ -152,7 +154,7 @@ class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
                     println(t.message)
                 }
                 override fun onResponse(call: Call<List<Professions>>, response: Response<List<Professions>>) {
-                    var professions = response.body()
+                    professions = response.body()!!
                     println(professions)
                     var arrayProfessions = List<String>(professions!!.size) { i -> professions[i].profession }
                     var spinner = findViewById<Spinner>(R.id.spinner)
@@ -168,7 +170,7 @@ class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, v: View?, position: Int, id: Long) {
-        user.profession = position
+        user.profession = professions[position].id
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?){}
@@ -178,8 +180,14 @@ class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
         return if (name.isNotEmpty()){
             val words = name.split(" ")
             var actualName = ""
-            for (word: String in words){
-                actualName += word[0].uppercaseChar() + word.substring(1).lowercase(Locale.ROOT) + " "
+            try {
+                for (word: String in words) {
+                    actualName += word[0].uppercaseChar() + word.substring(1)
+                        .lowercase(Locale.ROOT) + " "
+                }
+            }
+            catch (e: Exception){
+                actualName = name
             }
             println(actualName)
             return actualName
@@ -265,7 +273,10 @@ class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
             else setError("Выбирете хобби")
         }
     }
-
+    fun openQuiz(view: View){
+        val intent = Intent(this, QuizActivity().javaClass)
+        startActivity(intent)
+    }
     fun endRegistration(view: View){
         user.link_inst = findViewById<EditText>(R.id.input_inst).text.toString()
         user.link_vk = findViewById<EditText>(R.id.input_vk).text.toString()
@@ -275,31 +286,38 @@ class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
         println(user.image!!.name + user.image!!.extension)
         val multiPartBody =
             MultipartBody.Part.createFormData("avatar", user.image!!.name, requestFile)
-        Common.retrofitService.registration(
-            email = user.email!!,
-            password = user.password!!,
-            name = user.name!!,
-            professions = user.profession!!,
-            about = user.wordAboutSelf!!,
-            link_inst = user.link_inst!!,
-            link_tg = user.link_tg!!,
-            link_vk = user.link_vk!!,
-            hobbies = user.hobbies!!,
-            avatar = multiPartBody
-        ).enqueue(object : Callback<MyToken> {
-            override fun onFailure(token: Call<MyToken>, t: Throwable) {
-                println(t.message)
-            }
-
-            override fun onResponse(call: Call<MyToken>, response: Response<MyToken>) {
-                var token: String? = response.body()!!.token
-                if (token != null) {
-                    var session = Session(context)
-                    session.setSession(token)
-                    println("$token")
+        try {
+            Common.retrofitService.registration(
+                email = user.email!!,
+                password = user.password!!,
+                name = user.name!!,
+                professions = user.profession!!,
+                about = user.wordAboutSelf!!,
+                link_inst = user.link_inst!!,
+                link_tg = user.link_tg!!,
+                link_vk = user.link_vk!!,
+                hobbies = user.hobbies!!,
+                avatar = multiPartBody
+            ).enqueue(object : Callback<MyToken> {
+                override fun onFailure(token: Call<MyToken>, t: Throwable) {
+                    println(t.message)
                 }
-            }
-        })
+
+                override fun onResponse(call: Call<MyToken>, response: Response<MyToken>) {
+                    var token: String? = response.body()!!.token
+                    if (token != null) {
+                        var session = Session(context)
+                        session.setSession(token)
+                        println("$token")
+                        setContentView(R.layout.activity_greetings)
+
+                    }
+                }
+            })
+        }
+        catch (e: Exception){
+            Toast.makeText(this, "Упс.. Что-то пошло не так", Toast.LENGTH_SHORT).show()
+        }
 
     }
     fun goBack(view: View){ onBackPressed() }
