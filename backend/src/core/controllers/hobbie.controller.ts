@@ -10,7 +10,7 @@ class HobbieController {
         this.hobbies = dataSource.getRepository(HobbieModel)
     }
 
-    getAll = async (req: Request, res: Response, next: NextFunction) => {
+    getAll: ControllerHandler = async (req, res, next) => {
         const result = await this.hobbies.find()
         res.json(result)
     }

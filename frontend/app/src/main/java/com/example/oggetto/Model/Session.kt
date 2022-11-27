@@ -1,10 +1,11 @@
 package com.example.oggetto.Model
 
+import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
 
-
+@Suppress("DEPRECATION")
 class Session {
 
     private var prefs // SharedPreferences для менеджера
@@ -25,6 +26,7 @@ class Session {
     }
 
     // Получения сессии (куки)
+
     fun getSession(): String? {
         val id = prefs!!.getString("sessionID", "")
         println('"'.toString() + id + '"')

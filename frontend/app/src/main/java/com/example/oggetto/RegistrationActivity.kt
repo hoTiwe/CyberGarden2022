@@ -18,14 +18,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.oggetto.Model.*
 import com.example.oggetto.adapter.GridAdapter
-import com.example.oggetto.databinding.ActivityQuiz1Binding
-import id.zelory.compressor.Compressor
-import id.zelory.compressor.constraint.format
-import id.zelory.compressor.constraint.quality
-import id.zelory.compressor.constraint.resolution
-import id.zelory.compressor.constraint.size
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -33,9 +25,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.File
-import java.io.FileInputStream
 import java.util.*
-import kotlin.coroutines.CoroutineContext
 
 
 class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {

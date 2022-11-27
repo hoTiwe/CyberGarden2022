@@ -135,6 +135,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
+                    android:singleLine="true"
                     android:windowSoftInputMode="stateHidden"
                     android:scrollHorizontally="true"
                     android:id="@+id/input_inst"
@@ -217,6 +218,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
+                    android:singleLine="true"
                     android:windowSoftInputMode="stateHidden"
                     android:scrollHorizontally="true"
                     android:id="@+id/input_vk"

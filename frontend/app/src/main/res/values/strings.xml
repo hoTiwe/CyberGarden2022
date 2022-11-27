@@ -17,8 +17,6 @@
     <string name="link_tel">Ссылка на Telegram</string>
     <string name="link_vk">Ссылка на VK</string>
     <string name="stop">закончить</string>
-
-
     <string name="warning_email_1">email должен быть в зоне @oggettoweb.com</string>
     <string name="back_step">назад</string>
     <string name="oggetto">Oggetto</string>
@@ -27,11 +25,11 @@
     <string name="any_facts">Пару слов о себе</string>
     <string name="text_greet">Познакомишься\nс командой Oggetto?</string>
     <string name="text_quest">Тут пример\nвопроса про коллегу</string>
-
     <string name="manager_w">Manager</string>
     <string name="front_w">Front-end</string>
     <string name="back_w">Back-end</string>
     <string name="boss_w">Boss</string>
+    <string name="profileHeader">Список событий\nсотрудников Oggetto.\nВы можете присоединиться\nк любому из них или\nобъявить о своем</string>
 
     <string name="make_event">Создание\nмероприятия</string>
 
