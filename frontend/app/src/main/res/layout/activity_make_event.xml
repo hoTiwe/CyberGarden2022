@@ -33,7 +33,7 @@ tools:context=".RegistrationActivity">
                     android:scaleType="fitXY"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/angle" />
+                    app:srcCompat="@drawable/profile_background" />
 
                 <TextView
                     android:id="@+id/make_event"
@@ -55,6 +55,7 @@ tools:context=".RegistrationActivity">
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/montserrat"
                     android:text="Мероприятие"
                     android:textColor="#000000"
                     android:textSize="18sp"
@@ -180,8 +181,8 @@ tools:context=".RegistrationActivity">
                     android:id="@+id/data_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="7dp"
                     android:layout_marginTop="24dp"
+                    android:fontFamily="@font/montserrat"
                     android:text="Даты"
                     android:textColor="@color/black"
                     android:textSize="18sp"
@@ -236,7 +237,6 @@ tools:context=".RegistrationActivity">
                     android:id="@+id/ic_сalendar1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="1dp"
                     android:background="@drawable/stroke_round"
                     android:padding="17dp"
                     android:src="@drawable/ic_edit"
@@ -249,7 +249,7 @@ tools:context=".RegistrationActivity">
                     android:id="@+id/inputdatastart"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="21dp"
                     android:background="@drawable/stroke_round"
                     android:fontFamily="@font/montserrat"
                     android:hint="Дата начала"
@@ -289,7 +289,6 @@ tools:context=".RegistrationActivity">
                     android:id="@+id/ic_сalendar2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="1dp"
                     android:background="@drawable/stroke_round"
                     android:padding="17dp"
                     android:src="@drawable/ic_edit"
@@ -302,7 +301,7 @@ tools:context=".RegistrationActivity">
                     android:id="@+id/inputdataend"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="21dp"
                     android:background="@drawable/stroke_round"
                     android:fontFamily="@font/montserrat"
                     android:hint="Дата окончания"
@@ -317,6 +316,151 @@ tools:context=".RegistrationActivity">
                     app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/incorrect_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="40dp"
+                android:visibility="gone"
+                android:layout_marginStart="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_incorrect_data"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textError"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Дата начала - обязательна"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageError" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/line7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/data_any"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:fontFamily="@font/montserrat"
+                    android:text="Разное"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/ic_any"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ic_any"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/stroke_round"
+                    android:padding="17dp"
+                    android:src="@drawable/ic_document"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/ic_document" />
+
+                <EditText
+                    android:id="@+id/inputOverInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/stroke_round"
+                    android:fontFamily="@font/montserrat"
+                    android:hint="Любая другая информация"
+                    android:lines="1"
+                    android:padding="14dp"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ic_any" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/line_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:onClick="goBackFragment3"
+                    android:id="@+id/ic_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/btn_enter"/>
+
+                <ImageView
+                    android:id="@+id/ic_enter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_enter"
+                    android:onClick="endRegistration"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/btn_enter"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:onClick="goBackFragment3"
+                    android:text="@string/back_step"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/ic_back"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/btn_enter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat"
+                    android:onClick="endRegistration"
+                    android:text="завершить"
+                    android:textColor="@color/yellow"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/ic_enter"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
         </LinearLayout>
     </ScrollView>

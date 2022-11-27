@@ -1,6 +1,7 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
 import config from "./config/config"
+import EventModel from "./core/models/event.model"
 import HobbieModel from "./core/models/hobbie.model"
 import LinkModel from "./core/models/link.model"
 import ProfessionModel from "./core/models/profession.model"
@@ -16,7 +17,7 @@ const dataSource = new DataSource({
     options: {
         encrypt: false
     },
-    entities: [UserModel, HobbieModel, ProfessionModel, LinkModel],
+    entities: [UserModel, HobbieModel, ProfessionModel, LinkModel, EventModel],
     synchronize: true
 })
 
