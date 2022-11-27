@@ -26,5 +26,11 @@
     <string name="profession">Профессия</string>
     <string name="any_facts">Пару слов о себе</string>
     <string name="text_greet">Познакомишься\nс командой Oggetto?</string>
+    <string name="text_quest">Тут пример\nвопроса про коллегу</string>
+
+    <string name="manager_w">Manager</string>
+    <string name="front_w">Front-end</string>
+    <string name="back_w">Back-end</string>
+    <string name="boss_w">Boss</string>
 
 </resources>
