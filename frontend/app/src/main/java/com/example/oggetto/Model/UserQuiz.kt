@@ -6,7 +6,7 @@ class UserQuiz(
     var login: String,
     var avatar: String,
     var about: String,
-    var professions: Professions,
+    var profession: Professions,
     var hobbies: List<Hobbie>,
     var links: Links
     )

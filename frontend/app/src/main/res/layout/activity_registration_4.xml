@@ -33,7 +33,7 @@
                 </ImageView>
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/must_pick_1"
                     android:layout_width="63dp"
                     android:layout_height="115dp"
                     android:layout_marginEnd="35dp"
@@ -114,7 +114,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/line_inst"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="50dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -135,6 +135,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
+                    android:singleLine="true"
                     android:windowSoftInputMode="stateHidden"
                     android:scrollHorizontally="true"
                     android:id="@+id/input_inst"
@@ -217,6 +218,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
+                    android:singleLine="true"
                     android:windowSoftInputMode="stateHidden"
                     android:scrollHorizontally="true"
                     android:id="@+id/input_vk"
@@ -324,9 +326,30 @@
                     app:layout_constraintTop_toBottomOf="@+id/imageError"
                     app:layout_constraintStart_toStartOf="parent" />
 
+
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
     </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/dark_grey">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Загрузка"
+            android:textSize="22sp"
+            android:textColor="@color/black"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
