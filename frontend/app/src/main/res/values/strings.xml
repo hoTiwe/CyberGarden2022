@@ -31,4 +31,7 @@
     <string name="boss_w">Boss</string>
     <string name="profileHeader">Список событий\nсотрудников Oggetto.\nВы можете присоединиться\nк любому из них или\nобъявить о своем</string>
 
+    <string name="make_event">Создание\nмероприятия</string>
+
+
 </resources>
