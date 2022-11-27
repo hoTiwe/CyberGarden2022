@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.Cursor
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -17,7 +18,13 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.oggetto.Model.*
 import com.example.oggetto.adapter.GridAdapter
-import com.example.oggetto.api.Common
+import id.zelory.compressor.Compressor
+import id.zelory.compressor.constraint.format
+import id.zelory.compressor.constraint.quality
+import id.zelory.compressor.constraint.resolution
+import id.zelory.compressor.constraint.size
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -25,10 +32,12 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.io.File
+import java.io.FileInputStream
 import java.util.*
+import kotlin.coroutines.CoroutineContext
 
 
-class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener{
+class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     val user = User(null, null,null,null,null,null, listOf(),null,null,null)
     var pickedPhoto : Uri? = null
     var imageFile: File? = null
@@ -69,15 +78,16 @@ class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
                 //val uriPathHelper = URIPathHelper()
                 //val filePath = uriPathHelper.getPath(RegistrationActivity(), pickedPhoto!!)
                 if (pickedPhoto != null) {
-                    imageFile = File(getPath(pickedPhoto))
+                    imageFile = getPath(pickedPhoto)?.let { File(it) }
+
                     println(pickedPhoto!!.toString())
-                    //imageFile = File(pickedPhoto!!.toString())
                 }
             }
             super.onActivityResult(requestCode, resultCode, data)
         }
     }
-    fun getPath(uri: Uri?): String? {
+
+    private fun getPath(uri: Uri?): String? {
         val projection = arrayOf(MediaStore.Images.Media.DATA)
         val cursor: Cursor = managedQuery(uri, projection, null, null, null)
         startManagingCursor(cursor)
@@ -118,6 +128,7 @@ class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
         }
         return true
     }
+
     fun goBackFragment1(view: View){
         setContentView(R.layout.activity_registration_1)
     }
@@ -259,7 +270,8 @@ class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
         user.link_inst = findViewById<EditText>(R.id.input_inst).text.toString()
         user.link_vk = findViewById<EditText>(R.id.input_vk).text.toString()
         user.link_tg = findViewById<EditText>(R.id.inputLinkTelegram).text.toString()
-        var requestFile = RequestBody.create("multipart/form-data".toMediaTypeOrNull(), user.image!!)
+        var requestFile =
+            RequestBody.create("multipart/form-data".toMediaTypeOrNull(), user.image!!)
         println(user.image!!.name + user.image!!.extension)
         val multiPartBody =
             MultipartBody.Part.createFormData("avatar", user.image!!.name, requestFile)
@@ -281,12 +293,14 @@ class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
 
             override fun onResponse(call: Call<MyToken>, response: Response<MyToken>) {
                 var token: String? = response.body()!!.token
-                if (token!=null) {
+                if (token != null) {
                     var session = Session(context)
                     session.setSession(token)
+                    println("$token")
                 }
             }
         })
+
     }
     fun goBack(view: View){ onBackPressed() }
 }
