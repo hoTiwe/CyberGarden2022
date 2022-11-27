@@ -21,9 +21,8 @@ class AuthController {
     }
 
     login = async (req: Request, res: Response, next: NextFunction) => {
-        return next(
-            new ApiError(StatusCodes.INTERNAL_SERVER_ERROR, "not implemented")
-        )
+        // this method is already guarded with authorized middleware
+        res.sendStatus(StatusCodes.OK)
     }
 
     register = async (req: Request, res: Response, next: NextFunction) => {
@@ -43,9 +42,9 @@ class AuthController {
             let user = new UserModel()
 
             let links = new LinkModel()
-            links.inst_link = link_inst
-            links.tg_link = link_tg
-            links.vk_limk = link_vk
+            links.inst_link = link_inst.replace(/"/g, '')
+            links.tg_link = link_tg.replace(/"/g, '')
+            links.vk_limk = link_vk.replace(/"/g, '')
             user.links = links
 
             user.profession = await this.professions.findOne({
@@ -60,9 +59,9 @@ class AuthController {
                 },
             })
 
-            user.login = email
-            user.name = name
-            user.about = about
+            user.login = email.replace(/"/g, '')
+            user.name = name.replace(/"/g, '')
+            user.about = about.replace(/"/g, '')
             user.password = await bcrypt.hash(password, 10)
             user.avatar = req.file.filename
             await this.users.save(user)
