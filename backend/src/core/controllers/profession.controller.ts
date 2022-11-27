@@ -11,7 +11,7 @@ class ProfessionController {
         this.professions = dataSource.getRepository(ProfessionModel)
     }
 
-    getAll = async (req: Request, res: Response, next: NextFunction) => {
+    getAll: ControllerHandler = async (req, res, next) => {
         const result = await this.professions.find()
         res.json(result)
     }
