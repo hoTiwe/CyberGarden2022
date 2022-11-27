@@ -1,6 +1,7 @@
 package com.example.oggetto
 
 import Common
+import android.content.Intent
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
@@ -94,7 +95,7 @@ class QuizActivity: AppCompatActivity() {
             MotionEvent.ACTION_DOWN -> x1 = event.x
             MotionEvent.ACTION_UP -> {
                 x2 = event.x
-                val deltaX: Float = x2 - x1
+                val deltaX: Float = x1 - x2
                 if (deltaX > MIN_DISTANCE && isLastLayout) {
                     newQuiz(findViewById<TextView>(R.id.text_next))
                 }
@@ -108,7 +109,8 @@ class QuizActivity: AppCompatActivity() {
             setQuiz()
         }
         else{
-            setContentView(R.layout.activity_oggetto_events)
+            val intent = Intent(this, EventsActivity().javaClass)
+            startActivity(intent)
         }
     }
 }

@@ -25,6 +25,10 @@
             android:exported="false"
             android:windowSoftInputMode="stateHidden" />
         <activity
+            android:name=".EventsActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
             android:name=".RegistrationActivity"
             android:exported="false"
             android:windowSoftInputMode="stateHidden" />

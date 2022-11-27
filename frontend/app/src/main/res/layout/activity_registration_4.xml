@@ -337,7 +337,7 @@
         android:id="@+id/loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:background="@color/dark_grey">
@@ -348,7 +348,7 @@
             android:gravity="center"
             android:text="Загрузка"
             android:textSize="22sp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/white"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

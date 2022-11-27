@@ -271,6 +271,7 @@ class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
         user.link_inst = findViewById<EditText>(R.id.input_inst).text.toString()
         user.link_vk = findViewById<EditText>(R.id.input_vk).text.toString()
         user.link_tg = findViewById<EditText>(R.id.inputLinkTelegram).text.toString()
+        findViewById<ConstraintLayout>(R.id.loading).visibility = View.VISIBLE
         var requestFile =
             RequestBody.create("multipart/form-data".toMediaTypeOrNull(), user.image!!)
         println(user.image!!.name + user.image!!.extension)
@@ -290,10 +291,13 @@ class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
                 avatar = multiPartBody
             ).enqueue(object : Callback<MyToken> {
                 override fun onFailure(token: Call<MyToken>, t: Throwable) {
+                    findViewById<ConstraintLayout>(R.id.loading).visibility = View.GONE
+                    Toast.makeText(RegistrationActivity(), t.message,Toast.LENGTH_SHORT).show()
                     println(t.message)
                 }
 
                 override fun onResponse(call: Call<MyToken>, response: Response<MyToken>) {
+                    findViewById<ConstraintLayout>(R.id.loading).visibility = View.GONE
                     var token: String? = response.body()!!.token
                     if (token != null) {
                         var session = Session(context)
@@ -308,6 +312,7 @@ class RegistrationActivity : AppCompatActivity(), AdapterView.OnItemSelectedList
         catch (e: Exception){
             Toast.makeText(this, "Упс.. Что-то пошло не так", Toast.LENGTH_SHORT).show()
         }
+
 
     }
     fun goBack(view: View){ onBackPressed() }

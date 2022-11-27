@@ -28,9 +28,9 @@ class Session {
     // Получения сессии (куки)
 
     fun getSession(): String? {
-        val id = prefs!!.getString("sessionID", "")
+        val id = prefs!!.getString("sessionID", null)
         println('"'.toString() + id + '"')
-        return if (id === "{}" || id == null || id === "") null else id
+        return if (id === "{}" || id == null || id === "" || id.isEmpty()) null else id
     }
 
 }

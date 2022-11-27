@@ -32,4 +32,9 @@ interface JSONPlaceHolderApi {
     fun firstQuiz(
         @Header("Authorization") token: String
     ): Call<Quiz>
+
+    @GET("events")
+    fun getEventsList(
+        @Header("Authorization") token: String
+    ): Call<List<Event>>
 }
