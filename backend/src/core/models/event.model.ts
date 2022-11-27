@@ -24,13 +24,22 @@ class EventModel {
     subscribers: UserModel[]
 
     @Column()
+    title: string
+
+    @Column()
     description: string
+
+    @Column()
+    adress: string
 
     @Column({nullable: false})
     startDate: Date
 
     @Column({nullable: true})
     endDate: Date
+
+    @Column({nullable: true})
+    chat: string
 }
 
 export default EventModel

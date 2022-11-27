@@ -25,6 +25,10 @@ class EventController {
 
         res.json(await this.events.findOne({ where: { id } }))
     }
+
+    create: ControllerHandler = async (req, res, next) => {
+        const { title, } = req.body
+    }
 }
 
 export default EventController
