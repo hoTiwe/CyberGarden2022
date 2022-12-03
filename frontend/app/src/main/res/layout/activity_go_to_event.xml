@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    tools:context=".EventInfoActivity"
     android:layout_height="match_parent">
 
 
@@ -69,6 +70,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:onClick="back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_back" />
@@ -79,6 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-6dp"
             android:text="назад"
+            android:onClick="back"
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="@+id/imageView5"
             app:layout_constraintTop_toBottomOf="@+id/imageView5" />
@@ -170,10 +173,11 @@
             android:id="@+id/text_chat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:autoLink="web"
             android:layout_marginStart="22dp"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/montserrat"
-            android:text="Сылка на линк"
+            android:text="Чатик"
             android:textColor="#000000"
             app:layout_constraintStart_toEndOf="@+id/chatik"
             app:layout_constraintTop_toTopOf="parent" />
@@ -231,6 +235,25 @@
             app:layout_constraintStart_toStartOf="@+id/btnAddUsers"
             app:layout_constraintTop_toTopOf="@+id/btnAddUsers"
             app:srcCompat="@drawable/add_user" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:translationZ="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/dark_grey">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Загрузка"
+            android:textSize="22sp"
+            android:textColor="@color/white"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

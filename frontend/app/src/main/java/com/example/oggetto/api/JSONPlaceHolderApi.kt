@@ -4,6 +4,7 @@ import com.example.oggetto.Model.*
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
+import java.io.FileDescriptor
 
 
 interface JSONPlaceHolderApi {
@@ -42,4 +43,21 @@ interface JSONPlaceHolderApi {
     fun getEventsList(
         @Header("Authorization") token: String
     ): Call<List<Event>>
+
+    @Multipart
+    @POST("events")
+    fun makeEvent(
+        @Header("Authorization") token: String,
+        @Part("title") title: String,
+        @Part("chat") chat: String,
+        @Part("adress") adress: String?,
+        @Part("start") start: String,
+        @Part("end") end: String?,
+        @Part("description") descriptor: String?
+    ) : Call<Void>
+
+    @GET("events/id")
+    fun getEvent(
+        @Query("id") id: String
+    ): Call<Event>
 }
