@@ -2,6 +2,7 @@ import dotenv from "dotenv"
 
 dotenv.config()
 
+
 const config = {
     PORT: Number(process.env.PORT),
     DB_NAME: String(process.env.DB_NAME),
